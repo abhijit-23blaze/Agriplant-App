@@ -1,7 +1,7 @@
-import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/cart_screen.dart';
-import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/explore_screen.dart';
-import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/profile_screen.dart';
-import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/services_screen.dart';
+import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/cart_screen/cart_screen.dart';
+import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/explore_screen/explore_screen.dart';
+import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/profile_screen/profile_screen.dart';
+import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/services_screen/services_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:badges/badges.dart' as badges;
@@ -76,25 +76,29 @@ class _HomeScreenState extends State<HomeScreen> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(
-                IconlyBroken.home,
-              ),
-              label: 'Home'),
+            icon: Icon(
+              IconlyBroken.home,
+            ),
+            label: 'Home',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                IconlyBroken.call,
-              ),
-              label: 'Services'),
+            icon: Icon(
+              IconlyBroken.call,
+            ),
+            label: 'Services',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                IconlyBroken.buy,
-              ),
-              label: 'Cart'),
+            icon: Icon(
+              IconlyBroken.buy,
+            ),
+            label: 'Cart',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                IconlyBroken.profile,
-              ),
-              label: 'Profile'),
+            icon: Icon(
+              IconlyBroken.profile,
+            ),
+            label: 'Profile',
+          ),
         ],
       );
 }
