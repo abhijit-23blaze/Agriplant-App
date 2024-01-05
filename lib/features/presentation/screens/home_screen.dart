@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   AppBar customAppBar() => AppBar(
+        scrolledUnderElevation: 0,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 8.0 ),
+            padding: const EdgeInsets.only(right: 8.0),
             child: IconButton.filledTonal(
               onPressed: () {},
               icon: badges.Badge(
@@ -62,8 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-          ) ,
-         const SizedBox(width: 10),
+          ),
+          const SizedBox(width: 10),
         ],
       );
 
