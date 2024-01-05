@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'widgets/consultation_card.dart';
 import 'widgets/filter_and_search_field.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -10,10 +9,15 @@ class ExploreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-      padding: const EdgeInsets.only(left: 20.0),
+      padding: const EdgeInsets.only(left: 20.0, right: 20),
       child: Column(
-        children: [FilterAndSearchField()],
+        children: [
+          const FilterAndSearchField(),
+          const ConsultationCard(),
+        ],
       ),
     ));
   }
 }
+
+
