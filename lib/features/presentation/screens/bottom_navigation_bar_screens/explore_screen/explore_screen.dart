@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'widgets/consultation_card.dart';
+import 'widgets/featured_product_grid_view.dart';
+import 'widgets/featured_products.dart';
 import 'widgets/filter_and_search_field.dart';
+
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -14,10 +17,16 @@ class ExploreScreen extends StatelessWidget {
         children: [
           const FilterAndSearchField(),
           const ConsultationCard(),
+          const FeaturedProducts(),
+          FeaturedProductGridView()
         ],
       ),
     ));
   }
 }
+
+
+
+
 
 
