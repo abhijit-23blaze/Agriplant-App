@@ -55,7 +55,15 @@ class _ProductDetailsState extends State<ProductDetails> {
             buildDescriptionText(context),
             buildTitle(context, title: 'Related Products'),
             buildRelatedProductsList(),
-
+            SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
+                onPressed: () {},
+                         label: const Text('Add To Cart '),
+                icon:const Icon(IconlyLight.bag2),
+              ),
+            ),
           ],
         ),
       ),
@@ -64,28 +72,28 @@ class _ProductDetailsState extends State<ProductDetails> {
 
   SizedBox buildRelatedProductsList() {
     return SizedBox(
-            height: 100,
-            child: ListView.separated(
-              shrinkWrap: true,
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => Container(
-                height: 100,
-                width: 90,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12.0),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      products[index].image,
-                    ),
-                  ),
-                ),
+      height: 100,
+      child: ListView.separated(
+        shrinkWrap: true,
+        physics: const BouncingScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => Container(
+          height: 100,
+          width: 90,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12.0),
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(
+                products[index].image,
               ),
-              separatorBuilder: (context, index) => const SizedBox(width: 10),
-              itemCount: products.length,
             ),
-          );
+          ),
+        ),
+        separatorBuilder: (context, index) => const SizedBox(width: 10),
+        itemCount: products.length,
+      ),
+    );
   }
 
   Widget buildDescriptionText(BuildContext context) {
