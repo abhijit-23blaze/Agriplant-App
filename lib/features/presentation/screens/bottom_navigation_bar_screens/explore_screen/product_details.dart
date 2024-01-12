@@ -1,8 +1,9 @@
 import 'package:agriplant/features/data/models/product.dart';
-import 'package:agriplant/features/data/products.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'methods/build_add_to_cart_button.dart';
+import 'methods/build_related_products_list.dart';
 import 'widgets/circle_icon.dart';
 import 'widgets/product_banner.dart';
 import 'widgets/product_price_per_unit.dart';
@@ -55,46 +56,17 @@ class _ProductDetailsState extends State<ProductDetails> {
             buildDescriptionText(context),
             buildTitle(context, title: 'Related Products'),
             buildRelatedProductsList(),
-            SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              child: FilledButton.icon(
-                onPressed: () {},
-                         label: const Text('Add To Cart '),
-                icon:const Icon(IconlyLight.bag2),
-              ),
-            ),
+            const SizedBox(height: 20),
+            buildAddToCartButton(),
           ],
         ),
       ),
     );
   }
 
-  SizedBox buildRelatedProductsList() {
-    return SizedBox(
-      height: 100,
-      child: ListView.separated(
-        shrinkWrap: true,
-        physics: const BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => Container(
-          height: 100,
-          width: 90,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.0),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage(
-                products[index].image,
-              ),
-            ),
-          ),
-        ),
-        separatorBuilder: (context, index) => const SizedBox(width: 10),
-        itemCount: products.length,
-      ),
-    );
-  }
+
+
+
 
   Widget buildDescriptionText(BuildContext context) {
     return RichText(
