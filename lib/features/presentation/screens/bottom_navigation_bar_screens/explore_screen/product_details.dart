@@ -31,6 +31,23 @@ class _ProductDetailsState extends State<ProductDetails> {
               checkAvailabilityOfProduct(context),
               buildProductRating(),
               buildAddAndRemoveProduct(context),
+              Padding(
+                padding: const EdgeInsets.only(top: 20, bottom: 10),
+                child: Text(
+                  'Description',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+              ),
+              RichText(text: TextSpan(
+                children: [
+                  TextSpan(text: widget.product.description , style: Theme.of(context).textTheme.bodyMedium) ,
+                  TextSpan(text: ' Read More' ,style: TextStyle(color: Theme.of(context).colorScheme.primary))
+                ]
+              ))
+
             ],
           ),
         ));
