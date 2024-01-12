@@ -42,23 +42,27 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(context),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ProductBanner(product: widget.product),
-            buildProductTitle(context),
-            checkAvailabilityOfProduct(context),
-            buildProductRating(),
-            buildAddAndRemoveProduct(context),
-            buildTitle(context, title: 'Description'),
-            buildDescriptionText(context),
-            buildTitle(context, title: 'Related Products'),
-            buildRelatedProductsList(),
-            const SizedBox(height: 20),
-            buildAddToCartButton(),
-          ],
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ProductBanner(product: widget.product),
+              buildProductTitle(context),
+              checkAvailabilityOfProduct(context),
+              buildProductRating(),
+              buildAddAndRemoveProduct(context),
+              buildTitle(context, title: 'Description'),
+              buildDescriptionText(context),
+              buildTitle(context, title: 'Related Products'),
+              buildRelatedProductsList(),
+              const SizedBox(height: 20),
+              buildAddToCartButton(),
+
+            ],
+          ),
         ),
       ),
     );
