@@ -23,7 +23,7 @@ class CircleIcon extends StatelessWidget {
         onPressed: onPressed,
         iconSize: 20,
         padding: EdgeInsets.zero,
-        icon: Icon(icon),
+        icon: Icon(icon ,color: Colors.white,),
         color: Colors.white,
       ),
     );
