@@ -14,6 +14,7 @@ class ServicesScreen extends StatelessWidget {
     return Scaffold(
         appBar: buildServicesAppBar(),
         body: GridView.builder(
+          physics: const BouncingScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 0.75,

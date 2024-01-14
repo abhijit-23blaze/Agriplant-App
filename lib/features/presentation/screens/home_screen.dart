@@ -38,31 +38,27 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(
-              IconlyBroken.home,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              IconlyBroken.call,
-            ),
-            label: 'Services',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              IconlyBroken.buy,
-            ),
-            label: 'Cart',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              IconlyBroken.profile,
-            ),
-            label: 'Profile',
-          ),
+    items: const [
+      BottomNavigationBarItem(
+        icon: Icon(IconlyLight.home),
+        label: "Home",
+        activeIcon: Icon(IconlyBold.home),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(IconlyLight.call),
+        label: "Services",
+        activeIcon: Icon(IconlyBold.call),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(IconlyLight.buy),
+        label: "Cart",
+        activeIcon: Icon(IconlyBold.buy),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(IconlyLight.profile),
+        label: "Profile",
+        activeIcon: Icon(IconlyBold.profile),
+      ),
         ],
       );
 }
