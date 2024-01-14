@@ -60,17 +60,12 @@ class _ProductDetailsState extends State<ProductDetails> {
               buildRelatedProductsList(),
               const SizedBox(height: 20),
               buildAddToCartButton(),
-
             ],
           ),
         ),
       ),
     );
   }
-
-
-
-
 
   Widget buildDescriptionText(BuildContext context) {
     return RichText(
