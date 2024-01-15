@@ -70,16 +70,16 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget buildDescriptionText(BuildContext context) {
     return RichText(
         text: TextSpan(children: [
-      TextSpan(
-          text: showMore
-              ? widget.product.description
-              : "${widget.product.description.substring(0, widget.product.description.length - 100)} ...",
-          style: Theme.of(context).textTheme.bodyMedium),
-      TextSpan(
-          recognizer: readMoreOrLessGestureRecognizer,
-          text: showMore ? ' Read Less' : ' Read More',
-          style: TextStyle(color: Theme.of(context).colorScheme.primary))
-    ]));
+          TextSpan(
+              text: showMore
+                  ? widget.product.description
+                  : "${widget.product.description.substring(0, widget.product.description.length - 100)} ...",
+              style: Theme.of(context).textTheme.bodyMedium),
+          TextSpan(
+              recognizer: readMoreOrLessGestureRecognizer,
+              text: showMore ? ' Read Less' : ' Read More',
+              style: TextStyle(color: Theme.of(context).colorScheme.primary))
+        ]));
   }
 
   Widget buildTitle(BuildContext context, {required String title}) {
@@ -140,8 +140,8 @@ class _ProductDetailsState extends State<ProductDetails> {
         Text(
           '   ${countValue} Pcs   ',
           style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+            fontWeight: FontWeight.bold,
+          ),
         ),
         CircleIcon(
             icon: Icons.add,

@@ -1,7 +1,6 @@
 import 'package:agriplant/features/data/models/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-
 import '../product_details.dart';
 import 'circle_icon.dart';
 import 'product_price_per_unit.dart';
