@@ -60,6 +60,7 @@ class ServicesScreen extends StatelessWidget {
 
   AppBar buildServicesAppBar() {
     return AppBar(
+      scrolledUnderElevation: 0,
       leading: const Icon(Icons.menu),
       title: const Text('Services'),
       centerTitle: true,
