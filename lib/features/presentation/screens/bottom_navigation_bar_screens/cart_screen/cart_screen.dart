@@ -3,8 +3,9 @@ import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_sc
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter_iconly/flutter_iconly.dart';
+import '../../../../data/cart.dart';
 
-import '../../../../data/models/product.dart';
+int countValue = 1;
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -16,9 +17,11 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
-    List<Product> cartItems = products.take(4).toList();
-    final totalPrice =
-        cartItems.map((item) => item.price).reduce((acc, curr) => acc + curr);
+    //List<Product> cartItems = products.take(4).toList();
+    // final totalPrice = cartItems.map((item) => item.price).reduce((acc, curr) => acc + curr);
+    final totalPrice = cart
+        .map((item) => item.price * item.count)
+        .reduce((acc, curr) => acc + curr);
 
     return Scaffold(
       appBar: customAppBar(context),
@@ -27,25 +30,29 @@ class _CartScreenState extends State<CartScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: cartItems.length * 150,
+              height: cart.length * 150,
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
-                  final cartItem = cartItems[index];
                   return CartItem(
-                    product: cartItem,
+                    onCountValueChanged: (newCountValue) {
+                      setState(() {
+                        cart[index].count = newCountValue;
+                      });
+                    },
+                    product: cart[index],
                     onDismissed: (direction) {
                       setState(() {
-                        cartItems.removeAt(index);
+                        cart.removeAt(index);
                         products.removeAt(index);
                       });
                     },
-                  ) ;
+                  );
                 },
-                itemCount: cartItems.length,
+                itemCount: cart.length,
               ),
             ),
-            buildItemsCountAndPrice(cartItems, totalPrice, context),
+            buildItemsCountAndPrice(cart, totalPrice, context),
             buildProceedButton(),
           ],
         ),
@@ -53,35 +60,36 @@ class _CartScreenState extends State<CartScreen> {
     );
   }
 
-  Widget buildItemsCountAndPrice(List<dynamic> cartItems, totalPrice, BuildContext context) {
+  Widget buildItemsCountAndPrice(
+      List<dynamic> cartItems, totalPrice, BuildContext context) {
     return Padding(
-            padding: const EdgeInsets.all(10).copyWith(top: 0),
-            child: Row(
-              children: [
-                Text(
-                  'Total (${cartItems.length} items )',
-                ),
-                const Spacer(),
-                Text('$totalPrice\$',
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                        fontWeight: FontWeight.bold)),
-              ],
-            ),
-          );
+      padding: const EdgeInsets.all(10).copyWith(top: 0),
+      child: Row(
+        children: [
+          Text(
+            'Total (${cartItems.length} items )',
+          ),
+          const Spacer(),
+          Text('$totalPrice\$',
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontWeight: FontWeight.bold)),
+        ],
+      ),
+    );
   }
 
   Widget buildProceedButton() {
     return SizedBox(
-            width: double.infinity,
-            child: FilledButton.icon(
-              onPressed: () {},
-              icon: const Icon(IconlyBold.arrowRight),
-              label: const Text(
-                'Proceed To Checkout',
-              ),
-            ),
-          );
+      width: double.infinity,
+      child: FilledButton.icon(
+        onPressed: () {},
+        icon: const Icon(IconlyBold.arrowRight),
+        label: const Text(
+          'Proceed To Checkout',
+        ),
+      ),
+    );
   }
 }
 

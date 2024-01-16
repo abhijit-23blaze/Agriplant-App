@@ -1,14 +1,16 @@
 class Product {
   final int id;
+   int count;
   final String name;
   final String description;
   final String image;
-  final double price;
+  double price;
   final String unit;
   final double rating;
 
-  const Product({
+  Product({
     required this.id,
+    required this.count ,
     required this.name,
     required this.description,
     required this.image,

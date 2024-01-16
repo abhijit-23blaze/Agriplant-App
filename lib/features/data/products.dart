@@ -1,7 +1,7 @@
 import 'models/product.dart';
 
 List<Product> products = [
-  const Product(
+   Product(
     id: 1,
     name: "Tractor",
     description:
@@ -9,10 +9,11 @@ List<Product> products = [
     image: 'assets/tractor.jpg',
     price: 377.00,
     unit: 'day(s)',
-    rating: 4.35,
+    rating: 4.35, count: 1,
   ),
-  const Product(
+   Product(
     id: 2,
+     count: 1,
     name: "Fresh Fruits",
     description:
         "Indulge in the natural sweetness and goodness of our handpicked assortment of fresh fruits. Bursting with flavors and packed with nutrients, these delectable treats are ect for snacking, cooking, or adding a vibrant touch to your meals.",
@@ -21,8 +22,9 @@ List<Product> products = [
     unit: 'kg',
     rating: 3.86,
   ),
-  const Product(
+   Product(
     id: 3,
+    count: 1,
     name: "Gardener's Rake",
     description:
         "Maintain a pristine garden with our high-quality gardener's rake. Its sturdy build and well-designed tines make it easy to gather leaves, debris, and soil efficiently. Whether you're a seasoned gardener or just starting out, this tool is a reliable companion.",
@@ -31,8 +33,9 @@ List<Product> products = [
     unit: 'piece',
     rating: 4.18,
   ),
-  const Product(
+   Product(
     id:4,
+     count: 1,
     name: "Premium Seeds",
     description:
         "Embark on a journey of cultivation with our premium seeds collection. From vibrant flowers to nutritious vegetables, these carefully selected seeds promise a bountiful and thriving garden. Nurture your green thumb with the best nature has to offer.",
@@ -41,8 +44,9 @@ List<Product> products = [
     unit: 'kg',
     rating: 5.0,
   ),
-  const Product(
+   Product(
     id: 5,
+     count: 1,
     name: "Sturdy Shovel",
     description:
         "Conquer your landscaping and gardening tasks with our durable and versatile shovel. Built to withstand demanding work, its ergonomic handle and robust blade make digging, lifting, and moving materials a breeze. Elevate your outdoor projects with this essential tool.",
@@ -51,8 +55,9 @@ List<Product> products = [
     unit: 'piece',
     rating: 5.0,
   ),
-  const Product(
+   Product(
     id: 6,
+     count: 1,
     name: "Juicy Tomatoes",
     description:
         "Add a pop of color and flavor to your dishes with our juicy tomatoes. Grown with care, these plump and succulent tomatoes are a kitchen staple. Whether you're making sauces, salads, or sandwiches, these tomatoes are the key to culinary delight.",

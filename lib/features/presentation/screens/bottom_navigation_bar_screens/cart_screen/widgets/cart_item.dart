@@ -1,19 +1,20 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../../../../../data/models/product.dart';
+import '../cart_screen.dart';
 
 class CartItem extends StatefulWidget {
   CartItem({
     super.key,
     required this.product,
     required this.onDismissed,
+  required this.onCountValueChanged,
   });
 
   Product product;
-
+  final Function(int) onCountValueChanged;
   final Function(DismissDirection) onDismissed;
 
   @override
@@ -21,6 +22,8 @@ class CartItem extends StatefulWidget {
 }
 
 class _CartItemState extends State<CartItem> {
+
+
   @override
   Widget build(BuildContext context) {
     return Dismissible(
@@ -105,7 +108,7 @@ class _CartItemState extends State<CartItem> {
     return Row(
       children: [
         Text(
-          "${widget.product.price}\$",
+          "${widget.product.price * widget.product.count}\$",
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
@@ -114,7 +117,24 @@ class _CartItemState extends State<CartItem> {
         SizedBox(
           height: 30,
           child: ToggleButtons(
-              onPressed: (index) {},
+              onPressed: (index) {
+                setState(() {
+                  if (index == 0) {
+                    if (widget.product.count > 0) {
+                      setState(() {
+                        widget.product.count--;
+                      });
+                    } else {
+                      return;
+                    }
+                  } else if (index == 2) {
+                    setState(() {
+                      widget.product.count++;
+                    });
+                  }
+                });
+                widget.onCountValueChanged(widget.product.count);
+              },
               borderRadius: BorderRadius.circular(100.0),
               constraints: const BoxConstraints(minWidth: 30, minHeight: 30),
               selectedColor: Theme.of(context).colorScheme.primary,
@@ -123,10 +143,10 @@ class _CartItemState extends State<CartItem> {
                 false,
                 true
               ],
-              children: const [
-                Icon(Icons.remove),
-                Text('2'),
-                Icon(Icons.add),
+              children: [
+                const Icon(Icons.remove),
+                Text('${widget.product.count}'),
+                const Icon(Icons.add),
               ]),
         ),
       ],
