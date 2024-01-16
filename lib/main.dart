@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Agriplant',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green.shade800),
         useMaterial3: true,
         textTheme: GoogleFonts.nunitoTextTheme(),
         scaffoldBackgroundColor: Colors.white ,
