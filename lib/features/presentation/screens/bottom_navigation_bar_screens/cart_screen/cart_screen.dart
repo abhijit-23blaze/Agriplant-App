@@ -29,6 +29,7 @@ class _CartScreenState extends State<CartScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Column(
           children: [
+            if(cart.length >=1)
             SizedBox(
               height: cart.length * 150,
               child: ListView.builder(
@@ -49,7 +50,7 @@ class _CartScreenState extends State<CartScreen> {
                     },
                   );
                 },
-                itemCount: cart.length,
+                itemCount: cart.length ,
               ),
             ),
             buildItemsCountAndPrice(cart, totalPrice, context),
