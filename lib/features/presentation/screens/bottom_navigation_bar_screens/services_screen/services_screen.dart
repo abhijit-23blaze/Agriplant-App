@@ -1,10 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:badges/badges.dart' as badges;
-import 'package:flutter_iconly/flutter_iconly.dart';
-
 import '../../../../data/services.dart';
+import '../../../widgets/cutom_app_bar.dart';
 
 class ServicesScreen extends StatelessWidget {
   const ServicesScreen({super.key});
@@ -12,7 +9,10 @@ class ServicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: buildServicesAppBar(),
+        appBar: customAppBar(
+          context,
+          titleWidget: const Text('Services'),
+        ),
         body: GridView.builder(
           physics: const BouncingScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -56,33 +56,5 @@ class ServicesScreen extends StatelessWidget {
           ),
           itemCount: services.length,
         ));
-  }
-
-  AppBar buildServicesAppBar() {
-    return AppBar(
-      scrolledUnderElevation: 0,
-      leading: const Icon(Icons.menu),
-      title: const Text('Services'),
-      centerTitle: true,
-      actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: IconButton.filledTonal(
-            onPressed: () {},
-            icon: badges.Badge(
-              badgeContent: const Text(
-                '3',
-                style: TextStyle(color: Colors.white, fontSize: 12),
-              ),
-              position: badges.BadgePosition.topEnd(top: -13, end: -13),
-              child: const Icon(
-                IconlyBroken.notification,
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(width: 10),
-      ],
-    );
   }
 }

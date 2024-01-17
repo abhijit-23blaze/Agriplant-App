@@ -1,3 +1,4 @@
+import 'package:agriplant/features/presentation/widgets/cutom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -6,6 +7,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customAppBar(context),
       body: Center(
         child: Text("Profile Screen"),
       ),

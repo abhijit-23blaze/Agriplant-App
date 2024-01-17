@@ -1,9 +1,9 @@
 import 'package:agriplant/features/data/products.dart';
 import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/cart_screen/widgets/cart_item.dart';
 import 'package:flutter/material.dart';
-import 'package:badges/badges.dart' as badges;
 import 'package:flutter_iconly/flutter_iconly.dart';
 import '../../../../data/cart.dart';
+import '../../../widgets/cutom_app_bar.dart';
 
 int countValue = 1;
 
@@ -24,38 +24,41 @@ class _CartScreenState extends State<CartScreen> {
         .reduce((acc, curr) => acc + curr);
 
     return Scaffold(
-      appBar: customAppBar(context),
+     appBar: customAppBar(context),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Column(
-          children: [
-            if(cart.length >=1)
-            SizedBox(
-              height: cart.length * 150,
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return CartItem(
-                    onCountValueChanged: (newCountValue) {
-                      setState(() {
-                        cart[index].count = newCountValue;
-                      });
-                    },
-                    product: cart[index],
-                    onDismissed: (direction) {
-                      setState(() {
-                        cart.removeAt(index);
-                        products.removeAt(index);
-                      });
-                    },
-                  );
-                },
-                itemCount: cart.length ,
+        child: SingleChildScrollView(
+          physics:const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              if(cart.isNotEmpty)
+              SizedBox(
+                height: cart.length * 150,
+                child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return CartItem(
+                      onCountValueChanged: (newCountValue) {
+                        setState(() {
+                          cart[index].count = newCountValue;
+                        });
+                      },
+                      product: cart[index],
+                      onDismissed: (direction) {
+                        setState(() {
+                          cart.removeAt(index);
+                          products.removeAt(index);
+                        });
+                      },
+                    );
+                  },
+                  itemCount: cart.length ,
+                ),
               ),
-            ),
-            buildItemsCountAndPrice(cart, totalPrice, context),
-            buildProceedButton(),
-          ],
+              buildItemsCountAndPrice(cart, totalPrice, context),
+              buildProceedButton(),
+            ],
+          ),
         ),
       ),
     );
@@ -94,38 +97,3 @@ class _CartScreenState extends State<CartScreen> {
   }
 }
 
-AppBar customAppBar(context) => AppBar(
-      scrolledUnderElevation: 0,
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Hi Wilson! 👋',
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          Text(
-            'Enjoy Our Services !',
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
-        ],
-      ),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: IconButton.filledTonal(
-            onPressed: () {},
-            icon: badges.Badge(
-              badgeContent: const Text(
-                '3',
-                style: TextStyle(color: Colors.white, fontSize: 12),
-              ),
-              position: badges.BadgePosition.topEnd(top: -13, end: -13),
-              child: const Icon(
-                IconlyBroken.notification,
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(width: 10),
-      ],
-    );
