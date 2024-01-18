@@ -1,6 +1,6 @@
 import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/cart_screen/cart_screen.dart';
 import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/explore_screen/explore_screen.dart';
-import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/profile_screen/profile_screen.dart';
+import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/profile_screen/screens/profile_screen.dart';
 import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/services_screen/services_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
