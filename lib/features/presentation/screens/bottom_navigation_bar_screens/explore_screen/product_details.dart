@@ -41,7 +41,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context),
+      appBar: productDetailsAppBar(context),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
@@ -95,7 +95,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     );
   }
 
-  AppBar customAppBar(BuildContext context) {
+  AppBar productDetailsAppBar(BuildContext context) {
     return AppBar(
       leading: IconButton(
         onPressed: () {

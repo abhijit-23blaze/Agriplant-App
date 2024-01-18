@@ -11,7 +11,7 @@ class ConsultationCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: SizedBox(
-        height: 170,
+        height: 200,
         width: double.infinity,
         child: Card(
           color: Colors.green.shade50,
@@ -53,7 +53,7 @@ class ConsultationCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Image.asset(AssetsData.contactUs)
+              Image.asset(AssetsData.contactUs ,width: 140,)
             ],
           ),
         ),

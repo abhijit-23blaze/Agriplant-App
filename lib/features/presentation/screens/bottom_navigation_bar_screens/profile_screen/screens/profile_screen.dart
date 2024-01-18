@@ -54,6 +54,7 @@ class ProfileScreen extends StatelessWidget {
                 title: 'Logout', leadingIcon: IconlyLight.logout, onTap: () {}),
           ],
         ),
+
       ),
     );
   }
