@@ -59,7 +59,7 @@ class OrderItem extends StatelessWidget {
                     product: products[index],
                   ),
                 ),
-                if (order.products.length > 1)
+                if (order.products.length > 2)
                   TextButton.icon(
                       onPressed: () {
                         showModalBottomSheet(
