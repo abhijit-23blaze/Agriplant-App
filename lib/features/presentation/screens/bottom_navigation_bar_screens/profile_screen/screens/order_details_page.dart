@@ -1,5 +1,6 @@
 import 'package:agriplant/core/utils/enums/order_status.dart';
 import 'package:agriplant/core/utils/extensions/date.dart';
+import 'package:agriplant/features/presentation/screens/bottom_navigation_bar_screens/profile_screen/widgets/order_item.dart';
 import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -144,7 +145,8 @@ class OrderDetailsPage extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ) ,
+            OrderItem(order: order),
           ],
         ),
       ),
