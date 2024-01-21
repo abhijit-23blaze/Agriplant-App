@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
         textTheme: GoogleFonts.nunitoTextTheme(),
-        scaffoldBackgroundColor: Colors.white ,
+        scaffoldBackgroundColor: Colors.white,
       ),
       debugShowCheckedModeBanner: false,
       home: const WelcomeScreen(),
