@@ -14,7 +14,7 @@ extension DeliveryDate on DateTime {
     'Dec',
   ];
 
-  String get deliveryDate {
+  String get formatDate {
     return "${_monthAbbreviations[month - 1]} $day, $year";
   }
 }

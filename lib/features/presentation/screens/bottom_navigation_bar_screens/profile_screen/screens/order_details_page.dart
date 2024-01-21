@@ -2,6 +2,7 @@ import 'package:agriplant/core/utils/enums/order_status.dart';
 import 'package:agriplant/core/utils/extensions/date.dart';
 import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../../../../../data/models/order.dart';
 
@@ -67,27 +68,78 @@ class OrderDetailsPage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
-                          Text('Order: ${order.id}'),
+                          Text(
+                            'Order: ${order.id}',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall
+                                ?.copyWith(fontWeight: FontWeight.bold),
+                          ),
                           const Spacer(),
                           Chip(
                             label: Text(steps[activeStep].name),
                             shape: const StadiumBorder(),
                             side: BorderSide.none,
-                            avatar: const Icon(Icons.fire_truck ),
-                            backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(.4),
+                            avatar: const Icon(Icons.fire_truck),
+                            backgroundColor: Theme.of(context)
+                                .colorScheme
+                                .primary
+                                .withOpacity(.4),
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
-                          Text('Delivery Date   '),
-                          Text(' ${order.date.deliveryDate}'),
+                          const Text('Delivery Date   '),
+                          const Spacer(),
+                          Text(
+                            ' ${order.date.formatDate} ',
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ],
-                      )
+                      ),
+                      const SizedBox(height: 20),
+                      Text(
+                        'Jessi Williams ',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall
+                            ?.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 5),
+                      const Row(
+                        children: [
+                          Icon(IconlyLight.home),
+                          SizedBox(width: 10),
+                          Expanded(
+                              child: Text(
+                                  '22 st ,Hall Spring Suite 134\n East ANnabury , ok 442291 '))
+                        ],
+                      ),
+                      const SizedBox(height: 5),
+                      const Row(
+                        children: [
+                          Icon(IconlyLight.call),
+                          SizedBox(width: 10),
+                          Expanded(child: Text('01202534691')),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      const Row(
+                        children: [
+                          Text('Payment Method '),
+                          Spacer(),
+                          Text(
+                            'Credit Card **1234',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
