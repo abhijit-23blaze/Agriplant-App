@@ -1,16 +1,79 @@
-# agriplant
+# Agriplant
 
 A new Flutter project.
 
-## Getting Started
+## Agriculture Mobile App
 
-This project is a starting point for a Flutter application.
+![FUu3tCaUEAAUuCw](https://github.com/AhmedBelal31/Agriplant/assets/131663660/27431c45-9d23-4e2d-a151-62d13463ecc7)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+# Benfit👻
+## 🖥  Screens 
+* [🆗] Welcome Screen
+* [🆗] Home Screen
+* [🆗] Product Details Screen
+* [🆗] Services Screen 
+* [🆗] Cart Screen
+* [🆗] Profile Screen
+* [🆗] Orders Screen
+* [🆗] Order Details Screen
+<hr>
+
+# 🖥 Deal With :
+* Deal With Shared Prefs
+*  Deal With rootBundle
+*  Deal With local json
+
+# Snapshots
+
+| Welcome Screen	 | Home Screen |
+|---------|---------|
+| ![welcome](https://github.com/AhmedBelal31/Agriplant/assets/131663660/787151bb-b5ad-4a83-98c1-a70b9627e592)| ![home](https://github.com/AhmedBelal31/Agriplant/assets/131663660/3bf03320-abbd-455f-9e3f-d46d781c268d) |
+
+
+
+
+
+
+
+
+<hr>
+
+* Product Detail Screen Used Hero animation widget .
+
+
+| Product Detail Screen | Product Detail 2 Screen |
+|---------|---------|
+| ![product details](https://github.com/AhmedBelal31/Agriplant/assets/131663660/b737af81-9b4c-4e00-b988-80f2908753f8)| ![product details 2](https://github.com/AhmedBelal31/Agriplant/assets/131663660/92623e14-59e1-4e93-8701-2b6ddea3f123)|
+
+
+| services Screen| Profile  Screen |
+|---------|---------|
+| ![services](https://github.com/AhmedBelal31/Agriplant/assets/131663660/ddece71a-6e3b-4969-bf46-c5c2b9e952a6)| ![profile](https://github.com/AhmedBelal31/Agriplant/assets/131663660/0107c2d0-e5cd-493d-a971-bcc07e666f2c)|
+
+
+<hr>
+
+* Any order can be removed Or returned within 3 seconds . 
+
+* Add an order whose price will be calculated in the total price .
+
+
+|  Cart Screen | Delete From Cart View |
+|---------|---------|
+|![cart](https://github.com/AhmedBelal31/Agriplant/assets/131663660/1b812915-5c93-49f2-9122-7b9f5d1d1eaf) | ![deleteFromCart](https://github.com/AhmedBelal31/Agriplant/assets/131663660/643184dd-f8e6-459f-bd23-99d413e3a246)|
+
+
+
+
+
+|  Orders Screen | Show Bottom Sheet View |
+|---------|---------|
+|![orders](https://github.com/AhmedBelal31/Agriplant/assets/131663660/b55eaf76-5a93-4577-a82d-1c59fca1ec73)|![bottom sheet](https://github.com/AhmedBelal31/Agriplant/assets/131663660/1f7a3b95-36eb-449f-85f7-4d65a44dfdc5)|
+
+
+
+
+
